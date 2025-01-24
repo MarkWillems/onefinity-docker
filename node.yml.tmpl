@@ -1,0 +1,11 @@
+services:
+ <node-name>:
+  image: onefinity:testnet
+  container_name: <node-name>
+  restart: unless-stopped
+  environment:
+   - NODE_NAME=<node-name>
+  volumes:
+   - "./volumes/<node-name>/keys/:/opt/onefinity/VALIDATOR_KEYS"
+   - "./volumes/<node-name>/working-dir/:/opt/working-dir/validator"
+
