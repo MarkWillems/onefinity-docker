@@ -1,7 +1,7 @@
 
 
 # Onefinity Docker
-This is a straightforward Docker setup designed to run Onefinity nodes. Its goal is to simplify the process of getting started with running a Onefinity node. Please note that this setup is neither foolproof nor intended for production use.
+This is a straightforward Docker setup designed to run Onefinity nodes. Its goal is to simplify the process of getting started with running a Onefinity node. Please note that this setup is neither foolproof nor intended for production use and it may abstract too much, it can still serve as a useful kickstart.
 
 The current installation document, which this is based on, can be found here: https://docs.google.com/document/d/1EIxRkIH6nY3BhbjvKqXxQe2B7ho9eb2_dYXR1gpGtz4/edit?tab=t.0
 # How to use
@@ -43,7 +43,6 @@ To reuse keys, place them in the ./volume/node-name/keys directory, created in s
 Execute step 9 in the official installation document to get enough funding to stake a node: https://docs.google.com/document/d/1EIxRkIH6nY3BhbjvKqXxQe2B7ho9eb2_dYXR1gpGtz4/edit?tab=t.0.
 
 TL;DR 
-```
 
 Visit https://litewallet.validators.onefinity.network/unlock and use the (generated) walletKey.pem.
 
@@ -51,13 +50,20 @@ For now, this key is not highly secure, so simply copying its contents to a desk
 
 Staking will take place at a later stage.
 
-## 2.Running
+## 4.Running
 
 Start all the nodes
 ```
 ./script.sh start
 ```
+## 5.
+Stake the One to become eligble for an validator
+```
+docker exec -it <node-name>  /opt/onefinity-utils/stake.sh
 
+Default naming:
+docker exec -it onefinity-validator-0 /opt/onefinity-utils/stake.sh
+```
 ## Other commands
 
 ### Stopping of all nodes

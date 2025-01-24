@@ -110,8 +110,7 @@ case "$1" in
 'build')
     echo -e ""
     echo -e ""
-    echo -e "The first time to container need to be build, this can take a few minutes." 
-    read -p "Press any key to start to building! " YEAHYEAH
+    echo -e "The container needs to be built for the first time, which may take a few minutes." 
     echo -e ""
     rebuild
 ;;
