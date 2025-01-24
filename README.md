@@ -37,17 +37,19 @@ Execute the following command to configure the nodes
 ``
 
 ### 2.1 Import existing key
-To reuse keys, place them in the ./volume/node-name/keys directory, which is created in step 2. Ensure that validatorKey.pem and walletKey.pem are in this folder.
+To reuse keys, place them in the ./volume/node-name/keys directory, created in step 2. Make sure the files validatorKey.pem and walletKey.pem are located in this folder.
 
 ## 3 Funding
 Execute step 9 in the official installation document to get enough funding to stake a node: https://docs.google.com/document/d/1EIxRkIH6nY3BhbjvKqXxQe2B7ho9eb2_dYXR1gpGtz4/edit?tab=t.0.
 
 TL;DR 
 ```
-Go to the https://litewallet.validators.onefinity.network/unlock and use the (generated) walletKey.pem.
-For now this key is not really secure so just copy the content of this file to a desktop with browser acces is succuficient and use the "Request funds" or faucet.
 
-The staking will  happen later
+Visit https://litewallet.validators.onefinity.network/unlock and use the (generated) walletKey.pem.
+
+For now, this key is not highly secure, so simply copying its contents to a desktop with browser access will suffice. Use the 'Request Funds' or faucet option to proceed.
+
+Staking will take place at a later stage.
 
 ## 2.Running
 
@@ -65,10 +67,13 @@ Stop all the nodes
 ./script.sh stop
 ```
 
-### How to open termui of Elrond to get some stats of your node
+### How to open termui of Onefinity get some stats of your node
 
 ```
-docker exec -it <node-name> ./termui
+docker exec -it <node-name> /opt/onefinity-utils/termui  --address localhost:9501
+
+Default naming:
+docker exec -it onefinity-validator-0 /opt/onefinity-utils/termui  --address localhost:9501
 
 ```
 ### How to see the logging of a node?
@@ -80,11 +85,6 @@ docker exec -it <node-name> ./termui
 ### How to restart a node?
 ```
  docker restart <node-name>
-```
-
-### (re)set the github token
-```
-./script.sh github
 ```
 
 ### Rebuild the container images
