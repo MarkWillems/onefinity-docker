@@ -72,7 +72,7 @@ function create_node {
     echo -e "Generation keys for the node"
       docker run -it onefinity:testnet /opt/onefinity-utils/generate-wallet-key.sh> ./volumes/$NODE_NAME/keys/walletKey.pem
       docker run -it onefinity:testnet /opt/onefinity-utils/generate-validator-key.sh> ./volumes/$NODE_NAME/keys/validatorKey.pem
-    echo -e "${GREEN}Generated validator and walley keys for $NODE_NAME in /volumes/$NODE_NAME/keys ${NC}"
+    echo -e "${GREEN} Generated validator and walley keys for $NODE_NAME in /volumes/$NODE_NAME/keys ${NC}"
   fi
 
 
@@ -82,6 +82,7 @@ case "$1" in
 'rebuild')
     rebuild
 ;;
+
 'setup')
 
     echo -e "${GREEN} Start of initialising $NUMBEROFNODES node(s)${NC}"
@@ -125,10 +126,7 @@ case "$1" in
 
         node_name="$(basename $dir)"
         echo -e "- Generating docker file for $node_name"
-
-        port=$((8081+$node_number))
-        sed 's/<node-name>/'"$node_name"'/g' node.yml.tmpl > $node_name.node.yml
-        sed -i 's/<api_port>/'"127.0.0.1:$port"'/g' $node_name.node.yml
+        sed 's/<node-name>/'"$node_name"'/g' node.yml.tmpl > $node_name.node.yml      
         node_number=$node_number+1
         echo -e "${GREEN}- Generating docker file for $node_name done!${NC}"
     done
