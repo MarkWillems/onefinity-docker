@@ -1,10 +1,17 @@
 
 
 # Onefinity Docker
-This is a straightforward Docker setup designed to run Onefinity nodes. Its goal is to simplify the process of getting started with running a Onefinity node. Please note that this setup is neither foolproof nor intended for production use and it may abstract too much, it can still serve as a useful kickstart.
+This is a unoffical straightforward Docker setup designed to run Onefinity nodes. Its goal is to simplify the process of getting started with running a Onefinity node. Please note that this setup is neither foolproof nor intended for production use and it may abstract too much, it can still serve as a useful kickstart for you to get experience.
 
-The current installation document, which this is based on, can be found here: https://docs.google.com/document/d/1EIxRkIH6nY3BhbjvKqXxQe2B7ho9eb2_dYXR1gpGtz4/edit?tab=t.0
+* Run multiply nodes
+
+
+The current official installation document, which this is based on, can be found here:
+* https://docs.onefinity.network/validators
+* https://docs.google.com/document/d/1EIxRkIH6nY3BhbjvKqXxQe2B7ho9eb2_dYXR1gpGtz4/edit?tab=t.0
+
 # How to use
+
 
 ## Prerequisites
 - Have Docker and Docker Compose installed on your server: see <a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank">https://docs.docker.com/engine/install/ubuntu/</a>
