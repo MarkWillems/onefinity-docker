@@ -28,7 +28,7 @@ cd onefinity-docker
 
 The data of all the nodes will be stored in the volumes subdirectory.
 
-## 1. Configure your nodes
+## 1. Build the docker container locally
 
 Execute the following command to build the Docker container locally:
 
